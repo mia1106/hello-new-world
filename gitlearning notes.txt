@@ -1,0 +1,15 @@
+Git learning notes. 
+<h1> 5/2/2018</h1>
+
+(1)首先本机上已经安装了Git. 打开git bash界面，可以输入相应的指令。
+(2)学习了创建本地仓库。选择本地中合适的地方，创建一个文件夹/空目录。
+$ mkdir gitmia
+$ cd gitmia
+(3)将这个目录变成Git可以管理的仓库
+$ git init
+(4)添加文件到Git仓库
+第一步：
+$ git add file.txt
+$ git add file1.txt file2.txt file3.txt
+第二步
+$ git commit -m"add new files"
