@@ -13,3 +13,6 @@ $ git add file.txt
 $ git add file1.txt file2.txt file3.txt
 第二步
 $ git commit -m"add new files"
+（5）实际测试有关于discard 某些修改的指令
+git checkout . #本地所有修改的，没有addfile的，都返回到原来的状态
+git checkout -- gitlearning\notes.txt    #这个文件在本地的修改，还没有addfile,此时使用此指令，则修改会被丢弃
