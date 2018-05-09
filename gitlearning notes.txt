@@ -20,3 +20,9 @@ git checkout -- gitlearning\notes.txt    #这个文件在本地的修改，还�
 指令一： $ git reset --hard HEAD^     #HEAD代表的是当前版本，HEAD^代表的是上一个版本，HEAD^^是指上上个版本
 指令二： $git reset --hard xxxx       #其中xxxx是指版本号，在git log中的每个提交的开头可以显示出来，xxxx不需要写全
 举个例子 $git reset --hard 11bf
+(7)一些较为重要的概念
+第一：工作区（working directory）在电脑里能看到的目录，就是工作区。
+第二：版本库（repository）工作区里有一个隐藏的目录.git,就是Git的版本库。
+第三：暂存区（stage or index）：版本库里有一个重要区域就称为stage,暂存区。利用git add 就是把“修改”添加到暂存区；
+								第二步的git commit就是把暂存区的所有内容提交到当前分支。
+第四：提交之后，没有对工作区做任何修改，工作区就是干净的。
