@@ -16,4 +16,7 @@ $ git commit -m"add new files"
 （5）实际测试有关于discard 某些修改的指令
 git checkout . #本地所有修改的，没有addfile的，都返回到原来的状态
 git checkout -- gitlearning\notes.txt    #这个文件在本地的修改，还没有addfile,此时使用此指令，则修改会被丢弃
-（6）Test Git“时间穿梭机” Learn more about git, related git reset
+（6）当想把版本退回到或者是跳到某个版本时，关于git reset的一些操作
+指令一： $ git reset --hard HEAD^     #HEAD代表的是当前版本，HEAD^代表的是上一个版本，HEAD^^是指上上个版本
+指令二： $git reset --hard xxxx       #其中xxxx是指版本号，在git log中的每个提交的开头可以显示出来，xxxx不需要写全
+举个例子 $git reset --hard 11bf
