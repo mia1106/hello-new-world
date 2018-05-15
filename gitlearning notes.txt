@@ -1,0 +1,33 @@
+Git learning notes. 
+<h1> 5/2/2018</h1>
+
+(1)首先本机上已经安装了Git. 打开git bash界面，可以输入相应的指令。
+(2)学习了创建本地仓库。选择本地中合适的地方，创建一个文件夹/空目录。
+$ mkdir gitmia
+$ cd gitmia
+(3)将这个目录变成Git可以管理的仓库
+$ git init
+(4)添加文件到Git仓库
+第一步：
+$ git add file.txt
+$ git add file1.txt file2.txt file3.txt
+第二步
+$ git commit -m"add new files"
+（5）实际测试有关于discard 某些修改的指令
+git checkout . #本地所有修改的，没有addfile的，都返回到原来的状态
+git checkout -- gitlearning\notes.txt    #这个文件在本地的修改，还没有addfile,此时使用此指令，则修改会被丢弃
+（6）当想把版本退回到或者是跳到某个版本时，关于git reset的一些操作
+指令一： $ git reset --hard HEAD^     #HEAD代表的是当前版本，HEAD^代表的是上一个版本，HEAD^^是指上上个版本
+指令二： $git reset --hard xxxx       #其中xxxx是指版本号，在git log中的每个提交的开头可以显示出来，xxxx不需要写全
+举个例子 $git reset --hard 11bf
+(7)一些较为重要的概念
+第一：工作区（working directory）在电脑里能看到的目录，就是工作区。
+第二：版本库（repository）工作区里有一个隐藏的目录.git,就是Git的版本库。
+第三：暂存区（stage or index）：版本库里有一个重要区域就称为stage,暂存区。利用git add 就是把“修改”添加到暂存区；
+								第二步的git commit就是把暂存区的所有内容提交到当前分支。注意：其只有提交暂存了的修改。
+第四：提交之后，没有对工作区做任何修改，工作区就是干净的。
+(8)撤销修改
+场景一：当改乱了工作区的某个文件的内容，想丢弃此修改时，使用指令：git checkout -- file
+场景二：当改乱了的文件已经放到了暂存区，则分两步：第一步 将该文件修改从暂存区撤回 git reset HEAD file,
+		第二步：git checkout -- file
+场景三：已经提交了不合适的修改到版本库时，且没有推送到远端库时，则使用版本回退。
